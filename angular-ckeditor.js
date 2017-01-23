@@ -96,6 +96,18 @@
     else {
       instance = this.instance = CKEDITOR.replace(editorElement, config);
     }
+    instance.addCommand("openDirPop", { // create named command
+      exec: function(edt) {
+        alert(edt.getData());
+      }
+    });
+
+    instance.ui.addButton('openDirPop', { // add new button and bind our command
+      label: "Change direction",
+      command: 'openDirPop',
+      toolbar: 'insert',
+      icon: 'https://avatars1.githubusercontent.com/u/5500999?v=2&s=16'
+    });
 
     /**
      * Listen on events of a given type.
